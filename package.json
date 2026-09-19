@@ -1,0 +1,15 @@
+{
+  "name": "tax-assistance-mern",
+  "version": "1.0.0",
+  "description": "Full-Stack MERN Website for Tax Assistance (TA), RHA Advisory & Co.",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "rebuild": "npm run build --prefix client && node server/index.js"
+  },
+  "keywords": ["mern", "tax", "audit", "bangladesh", "react", "express", "mongodb"],
+  "author": "Tax Assistance (TA), RHA Advisory & Co.",
+  "license": "ISC"
+}
