@@ -1,0 +1,13 @@
+.git
+node_modules
+client/node_modules
+server/node_modules
+server/uploads/*
+!server/uploads/.gitkeep
+Untitled document.docx
+content_extracted.txt
+Clients logo/
+Tax Assistance Logo/
+Team Photo/
+*.log
+.DS_Store

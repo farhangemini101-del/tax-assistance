@@ -86,12 +86,13 @@ export default function Footer({ onNavigate }) {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <button
-                    onClick={() => onNavigate(link.id)}
-                    className="hover:text-white transition text-xs text-slate-400"
+                  <Link
+                    to={link.id === 'home' ? '/' : `/${link.id}`}
+                    onClick={scrollToTop}
+                    className="hover:text-white transition text-xs text-slate-400 block"
                   >
                     {link.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,12 +106,13 @@ export default function Footer({ onNavigate }) {
             <ul className="space-y-2">
               {servicesLinks.map((svc, idx) => (
                 <li key={idx}>
-                  <button
-                    onClick={() => onNavigate('services')}
-                    className="hover:text-white transition text-xs text-slate-400 text-left"
+                  <Link
+                    to="/services"
+                    onClick={scrollToTop}
+                    className="hover:text-white transition text-xs text-slate-400 block text-left"
                   >
                     {svc}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -7,9 +7,19 @@
     "server": "node server/index.js",
     "client": "npm run dev --prefix client",
     "build": "npm run build --prefix client",
-    "rebuild": "npm run build --prefix client && node server/index.js"
+    "rebuild": "npm run build --prefix client && node server/index.js",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
   },
-  "keywords": ["mern", "tax", "audit", "bangladesh", "react", "express", "mongodb"],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.24.4"
+  },
+  "keywords": ["mern", "tax", "audit", "bangladesh", "react", "express", "mongodb", "vercel"],
   "author": "Tax Assistance (TA), RHA Advisory & Co.",
   "license": "ISC"
 }

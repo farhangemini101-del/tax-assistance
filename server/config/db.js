@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 let isConnected = false;
 
 const connectDB = async () => {
+  if (process.env.VERCEL && !process.env.MONGODB_URI) {
+    console.log('[Database] No remote MONGODB_URI set in Vercel environment. Active in resilient fallback mode.');
+    isConnected = false;
+    return;
+  }
+
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tax_assistance';
   
   try {

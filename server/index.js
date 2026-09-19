@@ -26,14 +26,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve Uploads statically
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+const os = require('os');
+const uploadDir = process.env.VERCEL 
+  ? path.join(os.tmpdir(), 'uploads') 
+  : path.join(__dirname, 'uploads');
 
-// Mount API Routes
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (e) {
+  console.warn('Upload directory check warning:', e.message);
+}
+
+app.use('/uploads', express.static(uploadDir));
+
+// Mount API Routes (mount at /api and also root to handle Vercel rewrites seamlessly)
 app.use('/api', apiRoutes);
+app.use(apiRoutes);
 
-// Serve static client assets in production
+// Serve static client assets in production (when run directly outside Vercel)
 const clientDistPath = path.join(__dirname, '../client/dist');
-if (fs.existsSync(clientDistPath)) {
+if (!process.env.VERCEL && fs.existsSync(clientDistPath)) {
   app.use(express.static(clientDistPath));
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
@@ -41,7 +55,7 @@ if (fs.existsSync(clientDistPath)) {
     }
     res.sendFile(path.join(clientDistPath, 'index.html'));
   });
-} else {
+} else if (!process.env.VERCEL) {
   // Health route fallback if dist not built yet
   app.get('/', (req, res) => {
     res.json({
@@ -53,9 +67,14 @@ if (fs.existsSync(clientDistPath)) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 Tax Assistance Server running on port ${PORT}`);
-  console.log(`📡 API Base: http://localhost:${PORT}/api`);
-  console.log(`====================================================`);
-});
+// Only bind and listen to port if executed directly (standalone/local), not on Vercel serverless
+if (!process.env.VERCEL && process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 Tax Assistance Server running on port ${PORT}`);
+    console.log(`📡 API Base: http://localhost:${PORT}/api`);
+    console.log(`====================================================`);
+  });
+}
+
+module.exports = app;

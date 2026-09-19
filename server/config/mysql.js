@@ -11,26 +11,35 @@ const {
 
 const DB_CONFIG = {
   host: process.env.MYSQL_HOST || '127.0.0.1',
-  port: process.env.MYSQL_PORT || 3306,
+  port: process.env.MYSQL_PORT ? parseInt(process.env.MYSQL_PORT, 10) : 3306,
   user: process.env.MYSQL_USER || 'root',
   password: process.env.MYSQL_PASSWORD || '',
   database: process.env.MYSQL_DATABASE || 'tax_assistance',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  connectTimeout: 3000
 };
 
 let pool = null;
 let isConnected = false;
 
 const initMySQL = async () => {
+  // If running on Vercel and no remote MYSQL_HOST is provided, immediately fallback without stalling
+  if (process.env.VERCEL && !process.env.MYSQL_HOST) {
+    console.log('[MySQL] No remote MYSQL_HOST set in Vercel environment. Active in resilient fallback mode.');
+    isConnected = false;
+    return;
+  }
+
   try {
     // 1. Ensure database exists
     const tempConn = await mysql.createConnection({
       host: DB_CONFIG.host,
       port: DB_CONFIG.port,
       user: DB_CONFIG.user,
-      password: DB_CONFIG.password
+      password: DB_CONFIG.password,
+      connectTimeout: 3000
     });
     await tempConn.query(`CREATE DATABASE IF NOT EXISTS \`${DB_CONFIG.database}\`;`);
     await tempConn.end();
