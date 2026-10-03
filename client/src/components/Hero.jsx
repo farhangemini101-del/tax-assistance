@@ -15,7 +15,7 @@ import TiltCard from './TiltCard';
 
 export default function Hero({ onNavigate, stats = [] }) {
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#071322] text-white">
+    <section id="home" className="relative pt-36 sm:pt-40 md:pt-44 pb-16 sm:pb-20 md:pb-28 overflow-hidden bg-[#071322] text-white">
       {/* Dynamic Background Gradients & Glow */}
       <div className="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-700 via-slate-900 to-black"></div>
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
@@ -25,16 +25,16 @@ export default function Hero({ onNavigate, stats = [] }) {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b18_1px,transparent_1px),linear-gradient(to_bottom,#1e293b18_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Hero Content (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Affiliation Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-750/80 text-blue-200 text-xs font-semibold backdrop-blur-md shadow-inner">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
-              <span>Independent Member: Dhaka Taxes Bar Association</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-950/80 border border-blue-750/80 text-blue-200 text-[11px] sm:text-xs font-semibold backdrop-blur-md shadow-inner max-w-full">
+              <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+              <span className="truncate">Independent Member: Dhaka Taxes Bar Association</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
             </div>
 
             <div className="space-y-3">
@@ -44,7 +44,7 @@ export default function Hero({ onNavigate, stats = [] }) {
                   EST. 2025
                 </span>
               </p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Professional Solutions. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-amber-300">
                   Practical Advice.
@@ -60,10 +60,10 @@ export default function Hero({ onNavigate, stats = [] }) {
             </p>
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('services')}
-                className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-900/40 flex items-center gap-2 transition transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-900/40 flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5"
               >
                 <span>Explore Practice Pillars</span>
                 <ArrowRight className="w-4 h-4" />
@@ -71,7 +71,7 @@ export default function Hero({ onNavigate, stats = [] }) {
 
               <button
                 onClick={() => onNavigate('contact')}
-                className="px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-100 font-bold text-xs sm:text-sm border border-slate-700 flex items-center gap-2 transition"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-100 font-bold text-xs sm:text-sm border border-slate-700 flex items-center justify-center gap-2 transition"
               >
                 <span>Schedule Consultation</span>
               </button>
@@ -80,7 +80,7 @@ export default function Hero({ onNavigate, stats = [] }) {
                 href="https://wa.me/8801767690408?text=Hello,%20I%20would%20like%20to%20consult%20with%20Tax%20Assistance%20partners."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3.5 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/70 text-emerald-300 text-xs font-semibold border border-emerald-700/60 flex items-center gap-2 transition"
+                className="w-full sm:w-auto px-4 py-3 sm:py-3.5 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/70 text-emerald-300 text-xs font-semibold border border-emerald-700/60 flex items-center justify-center gap-2 transition"
               >
                 <Sparkles className="w-4 h-4 text-emerald-400" />
                 <span>Talk to an Expert</span>
@@ -105,10 +105,10 @@ export default function Hero({ onNavigate, stats = [] }) {
           </div>
 
           {/* Right Hero: Interactive 3D Canvas & Tilt Pillar Card (5 cols) */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative overflow-hidden lg:overflow-visible">
             
             {/* 3D Canvas Floating in the Background of the Card */}
-            <div className="absolute -inset-10 -top-16 opacity-75 pointer-events-none">
+            <div className="absolute inset-0 lg:-inset-10 lg:-top-16 opacity-75 pointer-events-none">
               <Hero3DCanvas />
             </div>
 

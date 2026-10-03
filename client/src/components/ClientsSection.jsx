@@ -224,7 +224,7 @@ export default function ClientsSection({ clients = [] }) {
   }, [clients, search]);
 
   return (
-    <section id="clients" className="py-24 bg-slate-50 border-b border-slate-200 selection:bg-amber-500 selection:text-white">
+    <section id="clients" className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-b border-slate-200 selection:bg-amber-500 selection:text-white">
       
       {/* Client Detail Inspector Modal */}
       {inspectingClient && (
@@ -234,7 +234,7 @@ export default function ClientsSection({ clients = [] }) {
         />
       )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14">
         
         {/* ========================================================================= */}
         {/* SECTION HEADER & EXECUTIVE METRICS BAR */}
@@ -255,41 +255,41 @@ export default function ClientsSection({ clients = [] }) {
         </div>
 
         {/* 4-Stat Metric Cards Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <TiltCard maxTilt={8} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
-            <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold mb-3 border border-emerald-100">
-              <Building2 className="w-5 h-5" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <TiltCard maxTilt={8} className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold mb-3 border border-emerald-100">
+              <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-3xl font-black text-slate-900 tracking-tight">40+</div>
-            <div className="text-xs font-bold text-slate-900 mt-1">Corporate Institutional Clients</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Commercial Banks, Multinationals & Public Ltd.</div>
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">40+</div>
+            <div className="text-xs font-bold text-slate-900 mt-1">Corporate Clients</div>
+            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Banks & Multinationals</div>
           </TiltCard>
 
-          <TiltCard maxTilt={8} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
-            <div className="w-11 h-11 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center font-bold mb-3 border border-sky-100">
-              <Layers className="w-5 h-5" />
+          <TiltCard maxTilt={8} className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center font-bold mb-3 border border-sky-100">
+              <Layers className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-3xl font-black text-slate-900 tracking-tight">10</div>
-            <div className="text-xs font-bold text-slate-900 mt-1">Strategic Industry Sectors</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Banking, FMCG, INGOs, Pharma, Power, Textiles</div>
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">10</div>
+            <div className="text-xs font-bold text-slate-900 mt-1">Industry Sectors</div>
+            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Banking, FMCG, Textiles</div>
           </TiltCard>
 
-          <TiltCard maxTilt={8} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
-            <div className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold mb-3 border border-amber-100">
-              <Users className="w-5 h-5" />
+          <TiltCard maxTilt={8} className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold mb-3 border border-amber-100">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-3xl font-black text-slate-900 tracking-tight">250+</div>
-            <div className="text-xs font-bold text-slate-900 mt-1">High Net-Worth Individuals</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Managing Directors, Expatriates & Family Offices</div>
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">250+</div>
+            <div className="text-xs font-bold text-slate-900 mt-1">HNWI Returns</div>
+            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Directors & Expats</div>
           </TiltCard>
 
-          <TiltCard maxTilt={8} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
-            <div className="w-11 h-11 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold mb-3 border border-blue-100">
-              <ShieldCheck className="w-5 h-5" />
+          <TiltCard maxTilt={8} className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold mb-3 border border-blue-100">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-3xl font-black text-slate-900 tracking-tight">100%</div>
-            <div className="text-xs font-bold text-slate-900 mt-1">Statutory Adherence Track</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Zero Default Record across NBR & Taxes Zones</div>
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">100%</div>
+            <div className="text-xs font-bold text-slate-900 mt-1">Statutory Adherence</div>
+            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">NBR Zero Default Record</div>
           </TiltCard>
         </div>
 
@@ -322,44 +322,44 @@ export default function ClientsSection({ clients = [] }) {
             </div>
 
             {/* View Mode Switcher */}
-            <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-2xl border border-slate-200 self-start sm:self-auto">
+            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-2xl border border-slate-200 w-full lg:w-auto">
               <button
                 onClick={() => setActiveViewMode('grouped')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 ${
                   activeViewMode === 'grouped'
                     ? 'bg-[#0f2942] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
                 title="Categorized by Industry Vertical"
               >
-                <Layers className="w-3.5 h-3.5" />
-                <span>Grouped by Sector</span>
+                <Layers className="w-3.5 h-3.5 shrink-0" />
+                <span>Grouped</span>
               </button>
 
               <button
                 onClick={() => setActiveViewMode('matrix')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 ${
                   activeViewMode === 'matrix'
                     ? 'bg-[#0f2942] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
                 title="Unified Filterable Client Grid"
               >
-                <Grid3X3 className="w-3.5 h-3.5" />
-                <span>Unified Matrix ({clients.length})</span>
+                <Grid3X3 className="w-3.5 h-3.5 shrink-0" />
+                <span>Unified ({clients.length})</span>
               </button>
 
               <button
                 onClick={() => setActiveViewMode('featured')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 ${
                   activeViewMode === 'featured'
                     ? 'bg-[#0f2942] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
                 title="Featured Brand Partners with Logos"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                <span>Featured Brands ({featuredClients.length})</span>
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                <span>Featured ({featuredClients.length})</span>
               </button>
             </div>
 

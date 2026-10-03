@@ -99,7 +99,7 @@ export default function ContactSection({ preSelectedService = '' }) {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-50 border-b border-slate-200">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -117,13 +117,13 @@ export default function ContactSection({ preSelectedService = '' }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Office Details & Google Map */}
           <div className="lg:col-span-5 space-y-6">
             
             {/* Contact Card */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-6 pb-4 border-b border-slate-100">
                 Principal Office Location
               </h3>
@@ -172,7 +172,7 @@ export default function ContactSection({ preSelectedService = '' }) {
               </div>
 
               {/* Direct Actions */}
-              <div className="mt-8 pt-6 border-t border-slate-100 grid grid-cols-2 gap-3">
+              <div className="mt-8 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
                   href="https://wa.me/8801767690408?text=Hello,%20I%20would%20like%20to%20consult%20with%20Tax%20Assistance%20firm."
                   target="_blank"
@@ -213,7 +213,7 @@ export default function ContactSection({ preSelectedService = '' }) {
 
           {/* Right Column: Contact Inquiry Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-8 md:p-10 shadow-sm">
               <div className="mb-6">
                 <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">
                   Direct Advisory Request

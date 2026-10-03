@@ -31,7 +31,7 @@ export default function ServicesSection({ services = [], onSelectServiceForInqui
   };
 
   return (
-    <section id="services" className="py-24 bg-slate-50 border-b border-slate-200">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -50,7 +50,7 @@ export default function ServicesSection({ services = [], onSelectServiceForInqui
         </div>
 
         {/* Pillar Category Tabs */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 mb-10">
           {services.map((svc, idx) => {
             const Icon = getIcon(svc.id);
             const isActive = activeCategoryIndex === idx;
@@ -61,29 +61,29 @@ export default function ServicesSection({ services = [], onSelectServiceForInqui
                   setActiveCategoryIndex(idx);
                   setSearchQuery('');
                 }}
-                className={`p-4 rounded-xl text-left transition-all flex flex-col justify-between border ${
+                className={`p-3.5 sm:p-4 rounded-xl text-left transition-all flex flex-col justify-between border ${
                   isActive 
                     ? 'bg-[#0f2942] text-white border-[#0f2942] shadow-md transform -translate-y-0.5' 
                     : 'bg-white text-slate-700 border-slate-200/80 hover:bg-slate-100/80'
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center ${
                     isActive ? 'bg-blue-600/30 text-amber-400' : 'bg-slate-100 text-slate-600'
                   }`}>
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded ${
+                  <span className={`text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded ${
                     isActive ? 'bg-blue-800/80 text-blue-200' : 'bg-slate-100 text-slate-500'
                   }`}>
                     {svc.subcategories?.length || 0} Areas
                   </span>
                 </div>
                 <div>
-                  <h3 className={`text-sm font-bold leading-snug ${isActive ? 'text-white' : 'text-slate-900'}`}>
+                  <h3 className={`text-xs sm:text-sm font-bold leading-snug ${isActive ? 'text-white' : 'text-slate-900'}`}>
                     {svc.title}
                   </h3>
-                  <p className={`text-[11px] mt-1 line-clamp-1 ${isActive ? 'text-slate-300' : 'text-slate-500'}`}>
+                  <p className={`text-[10px] sm:text-[11px] mt-1 line-clamp-1 ${isActive ? 'text-slate-300' : 'text-slate-500'}`}>
                     {svc.category}
                   </p>
                 </div>
@@ -94,14 +94,14 @@ export default function ServicesSection({ services = [], onSelectServiceForInqui
 
         {/* Active Service Deep Dive Banner */}
         {currentService && (
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 mb-8">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-8 mb-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-100">
               <div className="max-w-2xl">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
                   <span className="text-xs font-bold text-blue-900 uppercase tracking-wider">Practice Overview</span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">{currentService.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">{currentService.title}</h3>
                 <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                   {currentService.summary}
                 </p>
@@ -109,7 +109,7 @@ export default function ServicesSection({ services = [], onSelectServiceForInqui
 
               <button
                 onClick={() => onSelectServiceForInquiry(currentService.title)}
-                className="self-start md:self-auto px-5 py-2.5 bg-[#0f2942] hover:bg-blue-900 text-white text-xs font-bold rounded-lg shadow transition flex items-center gap-2"
+                className="w-full sm:w-auto px-5 py-2.5 bg-[#0f2942] hover:bg-blue-900 text-white text-xs font-bold rounded-lg shadow transition flex items-center justify-center gap-2"
               >
                 <span>Inquire About {currentService.title}</span>
                 <ArrowRight className="w-4 h-4" />

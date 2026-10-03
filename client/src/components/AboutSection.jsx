@@ -118,8 +118,8 @@ export default function AboutSection({ firmInfo }) {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white border-b border-slate-200 selection:bg-amber-500 selection:text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <section id="about" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-200 selection:bg-amber-500 selection:text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -262,7 +262,7 @@ export default function AboutSection({ firmInfo }) {
                 <TiltCard 
                   key={idx} 
                   maxTilt={10}
-                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-2xs hover:shadow-xl transition flex flex-col justify-between h-72"
+                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-2xs hover:shadow-xl transition flex flex-col justify-between min-h-[17rem] h-auto"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -290,7 +290,7 @@ export default function AboutSection({ firmInfo }) {
         {/* ========================================================================= */}
         {/* "WHY TA VS TRADITIONAL FIRMS" COMPARISON MATRIX */}
         {/* ========================================================================= */}
-        <div className="bg-[#071526] rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-2xl space-y-8">
+        <div className="bg-[#071526] rounded-3xl p-5 sm:p-8 md:p-12 text-white border border-slate-800 shadow-2xl space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30">
               The Advisory Advantage
@@ -304,7 +304,7 @@ export default function AboutSection({ firmInfo }) {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse">
+            <table className="w-full min-w-[620px] text-left text-xs border-collapse">
               <thead>
                 <tr className="border-b border-slate-700 text-slate-400 uppercase text-[10px] font-black tracking-wider">
                   <th className="py-3 px-4">Evaluation Dimension</th>

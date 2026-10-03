@@ -38,10 +38,10 @@ export default function StatutoryCommandWidget() {
   return (
     <>
       {/* Floating Trigger Pill */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-[#07172b] to-[#0f2942] text-white border border-amber-500/40 shadow-2xl hover:shadow-amber-500/20 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+          className="group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#07172b] to-[#0f2942] text-white border border-amber-500/40 shadow-2xl hover:shadow-amber-500/20 hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
           title="Open Statutory Compliance Desk & Live Tax Rates"
         >
           <span className="relative flex h-3 w-3">
@@ -59,7 +59,7 @@ export default function StatutoryCommandWidget() {
 
       {/* Floating Modal / Drawer */}
       {isOpen && (
-        <div className="fixed bottom-22 right-4 sm:right-6 z-50 w-full max-w-sm sm:max-w-md bg-[#050f1f]/95 backdrop-blur-xl rounded-3xl border border-slate-700/80 shadow-2xl text-white overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-16 sm:bottom-22 left-4 right-4 sm:left-auto sm:right-6 z-50 w-auto sm:w-96 sm:max-w-md bg-[#050f1f]/95 backdrop-blur-xl rounded-3xl border border-slate-700/80 shadow-2xl text-white overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           
           {/* Header */}
           <div className="p-5 bg-gradient-to-r from-[#07182c] to-[#0d2644] border-b border-slate-700/70 flex items-center justify-between">

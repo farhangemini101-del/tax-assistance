@@ -76,7 +76,7 @@ export default function TeamSection({ team = [], onBookConsultation }) {
   ];
 
   return (
-    <section id="team" className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 overflow-hidden">
+    <section id="team" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -97,7 +97,7 @@ export default function TeamSection({ team = [], onBookConsultation }) {
         {/* 1. Founder & CEO Featured Executive Showcase (Mehedi Hasan, CPA, ITP) */}
         {leader && (
           <div className="mb-20">
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#091b30] via-[#0f2945] to-[#071424] text-white border border-blue-500/30 shadow-2xl p-6 sm:p-10 lg:p-12">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#091b30] via-[#0f2945] to-[#071424] text-white border border-blue-500/30 shadow-2xl p-4 sm:p-8 lg:p-12">
               {/* Background ambient lighting */}
               <div className="absolute -top-32 -right-32 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
               <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -165,7 +165,7 @@ export default function TeamSection({ team = [], onBookConsultation }) {
 
                   {/* Interactive Profile Detail Tabs */}
                   <div>
-                    <div className="flex gap-2 pb-3 border-b border-slate-700/80">
+                    <div className="flex flex-wrap gap-2 pb-3 border-b border-slate-700/80">
                       <button
                         onClick={() => setActiveLeaderTab('expertise')}
                         className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition ${
@@ -278,18 +278,18 @@ export default function TeamSection({ team = [], onBookConsultation }) {
                   </div>
 
                   {/* Bottom Action */}
-                  <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
                     <button
                       onClick={() => onBookConsultation && onBookConsultation('Consultation with Founder & CEO - Mehedi Hasan, CPA, ITP')}
-                      className="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-md transition flex items-center gap-2"
+                      className="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-md transition flex items-center justify-center gap-2"
                     >
-                      <MessageSquare className="w-4 h-4 text-slate-950" />
+                      <MessageSquare className="w-4 h-4 text-slate-950 shrink-0" />
                       <span>Request Consultation with Mehedi Hasan</span>
                     </button>
                     
                     <a
                       href="mailto:info@tax-assistance.com?subject=Consultation%20Inquiry%20for%20Mehedi%20Hasan,%20CPA"
-                      className="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition"
+                      className="w-full sm:w-auto text-center px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition"
                     >
                       Direct Email
                     </a>

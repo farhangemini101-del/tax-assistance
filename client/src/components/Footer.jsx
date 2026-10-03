@@ -71,8 +71,8 @@ export default function Footer({ onNavigate }) {
             </p>
 
             <div className="pt-2">
-              <span className="inline-flex items-center gap-1 text-[11px] bg-slate-900 border border-slate-800 text-slate-300 px-3 py-1 rounded-full">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="inline-flex items-center gap-1.5 text-[11px] bg-slate-900 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-xl max-w-full leading-snug">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>Professional Solutions. Practical Advice. Trusted Partnership.</span>
               </span>
             </div>
@@ -186,7 +186,7 @@ export default function Footer({ onNavigate }) {
             Copyright © 2026 Tax Assistance (TA), RHA Advisory & Co. All Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-4 text-[11px] text-slate-500">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5 sm:gap-4 text-[11px] text-slate-500">
             <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
             <span>•</span>
             <span className="hover:text-slate-400 cursor-pointer">Terms & Conditions</span>

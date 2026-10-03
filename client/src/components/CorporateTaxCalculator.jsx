@@ -73,7 +73,7 @@ export default function CorporateTaxCalculator() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#061424] via-[#0a1e36] to-[#040e1a] rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl text-white relative overflow-hidden">
+    <div className="bg-gradient-to-br from-[#061424] via-[#0a1e36] to-[#040e1a] rounded-3xl p-4 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl text-white relative overflow-hidden">
       
       {/* Background Lighting */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -97,7 +97,7 @@ export default function CorporateTaxCalculator() {
           </div>
 
           <div className="flex items-center gap-2 self-start md:self-auto px-3.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-xs text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>Income Tax Act 2023 Aligned</span>
           </div>
         </div>
@@ -161,18 +161,18 @@ export default function CorporateTaxCalculator() {
                 className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
               />
 
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-mono">
+              <div className="flex justify-between text-[9px] sm:text-[10px] text-slate-400 mt-1 font-mono">
                 <span>BDT 5 Lac</span>
-                <span>BDT 2.5 Crore</span>
-                <span>BDT 5 Crore</span>
-                <span>BDT 10 Crore</span>
+                <span>BDT 2.5 Cr</span>
+                <span>BDT 5 Cr</span>
+                <span>BDT 10 Cr</span>
               </div>
             </div>
 
             {/* Cashless Compliance Toggle */}
-            <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80 flex items-start justify-between gap-4">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80 flex items-start justify-between gap-3 sm:gap-4">
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   <span className="text-xs font-bold text-white">Cashless / Banking Channel Compliance</span>
                   <span className="text-[10px] px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
                     Statutory Rebate
@@ -197,7 +197,7 @@ export default function CorporateTaxCalculator() {
           </div>
 
           {/* Result Card (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0e2746] to-[#07172b] border border-blue-500/30 shadow-xl space-y-6">
+          <div className="lg:col-span-5 flex flex-col justify-between p-5 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0e2746] to-[#07172b] border border-blue-500/30 shadow-xl space-y-6">
             
             <div>
               <div className="flex items-center justify-between text-xs text-blue-200 border-b border-blue-800/60 pb-3 mb-4">
@@ -209,7 +209,7 @@ export default function CorporateTaxCalculator() {
                 <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">
                   Indicative Corporate Tax Liability
                 </span>
-                <div className="text-3xl sm:text-4xl font-black text-white tracking-tight font-mono text-amber-400">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-mono text-amber-400 break-words">
                   {formatBDT(estimatedTaxLiability)}
                 </div>
                 <span className="text-[10px] text-slate-400 block mt-1">
@@ -236,10 +236,10 @@ export default function CorporateTaxCalculator() {
 
               <Link
                 to={`/contact?service=Corporate%20Tax&estimatedProfit=${profitAmount}`}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#071526] font-extrabold text-xs tracking-wider uppercase transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 text-center"
+                className="w-full py-3 px-3 sm:px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#071526] font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 text-center"
               >
                 <span>Request Formal Tax Advisory Assessment</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 shrink-0" />
               </Link>
             </div>
 
