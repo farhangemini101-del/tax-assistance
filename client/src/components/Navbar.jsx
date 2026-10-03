@@ -254,45 +254,45 @@ export default function Navbar() {
               : 'bg-white/97 backdrop-blur-md py-4 border-b border-slate-200/90 text-slate-900'
           }`}
         >
-          <div className="max-w-screen-2xl mx-auto px-6 lg:px-10 flex justify-between items-center">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-5 2xl:px-8 flex justify-between items-center gap-2">
             
             {/* Brand Logo & Corporate Monogram */}
             <Link 
               to="/" 
-              className="flex items-center gap-4 group flex-shrink-0"
+              className="flex items-center gap-3 group shrink-0"
             >
-              <div className="relative w-14 h-14 rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200 flex items-center justify-center p-1.5 group-hover:scale-105 transition-transform duration-300 group-hover:shadow-lg">
+              <div className="relative w-11 h-11 2xl:w-13 2xl:h-13 rounded-xl overflow-hidden bg-white shadow-xs border border-slate-200 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
                 <img 
                   src="/logo.webp" 
                   alt="Tax Assistance (TA) Logo" 
                   className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"></div>
+                <div className="absolute inset-0 bg-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
               </div>
 
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className={`text-xl font-black tracking-tight transition leading-tight ${isScrolled ? 'text-white' : 'text-[#0a192c]'}`}>
+              <div className="shrink-0">
+                <div className="flex items-center gap-1.5">
+                  <span className={`text-base 2xl:text-lg font-black tracking-tight transition leading-tight whitespace-nowrap ${isScrolled ? 'text-white' : 'text-[#0a192c]'}`}>
                     Tax Assistance
                   </span>
-                  <span className="px-2 py-0.5 rounded-md text-[11px] font-black bg-amber-500/20 text-amber-500 border border-amber-500/30 tracking-wider">
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-black bg-amber-500/20 text-amber-500 border border-amber-500/30 tracking-wider">
                     TA
                   </span>
                 </div>
-                <p className={`text-[11px] font-semibold tracking-wide mt-0.5 ${isScrolled ? 'text-slate-400' : 'text-slate-500'}`}>
+                <p className={`text-[10px] 2xl:text-[11px] font-semibold tracking-wide whitespace-nowrap mt-0.5 ${isScrolled ? 'text-slate-400' : 'text-slate-500'}`}>
                   RHA Advisory & Co. · Chartered Tax & Advisory
                 </p>
               </div>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden xl:flex items-center gap-1">
+            <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1 shrink-0">
               {navLinks.map((link) => {
                 if (link.isMega) {
                   return (
                     <div 
                       key={link.path}
-                      className="relative"
+                      className="relative shrink-0"
                       onMouseEnter={() => setServicesMegaMenuOpen(true)}
                       onMouseLeave={() => setServicesMegaMenuOpen(false)}
                       ref={megaMenuRef}
@@ -300,7 +300,7 @@ export default function Navbar() {
                       <NavLink
                         to={link.path}
                         className={({ isActive }) =>
-                          `flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-bold rounded-xl transition-all ${
+                          `whitespace-nowrap flex items-center gap-1 px-2.5 py-2 2xl:px-3.5 2xl:py-2.5 text-[12.5px] 2xl:text-[13px] font-bold rounded-xl transition-all shrink-0 ${
                             isActive || location.pathname.startsWith('/services')
                               ? isScrolled 
                                 ? 'bg-blue-600/30 text-sky-300 border border-blue-500/30' 
@@ -311,8 +311,8 @@ export default function Navbar() {
                           }`
                         }
                       >
-                        <span>{link.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesMegaMenuOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'}`} />
+                        <span className="whitespace-nowrap">{link.name}</span>
+                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 shrink-0 ${servicesMegaMenuOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'}`} />
                       </NavLink>
 
                       {/* Elite 4-Column Mega Menu */}
@@ -423,7 +423,7 @@ export default function Navbar() {
                     key={link.path}
                     to={link.path}
                     className={({ isActive }) =>
-                      `relative px-4 py-2.5 text-[13px] font-bold rounded-xl transition-all flex items-center gap-1.5 ${
+                      `whitespace-nowrap px-2.5 py-2 2xl:px-3.5 2xl:py-2.5 text-[12.5px] 2xl:text-[13px] font-bold rounded-xl transition-all flex items-center gap-1.5 shrink-0 ${
                         isActive
                           ? isScrolled 
                             ? 'bg-blue-600/30 text-sky-300 border border-blue-500/30' 
@@ -434,9 +434,9 @@ export default function Navbar() {
                       }`
                     }
                   >
-                    <span>{link.name}</span>
+                    <span className="whitespace-nowrap">{link.name}</span>
                     {link.badge && (
-                      <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-amber-400/25 text-amber-500 border border-amber-400/40 leading-none">
+                      <span className="whitespace-nowrap text-[9.5px] font-black px-1.5 py-0.5 rounded-full bg-amber-400/25 text-amber-500 border border-amber-400/40 leading-none">
                         {link.badge}
                       </span>
                     )}
@@ -446,20 +446,20 @@ export default function Navbar() {
             </div>
 
             {/* Right Interactive Controls: Search + WhatsApp + Consultation CTA */}
-            <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
+            <div className="hidden xl:flex items-center gap-2 2xl:gap-3 shrink-0">
               
               {/* Quick Search Trigger */}
               <button
                 onClick={() => setSearchModalOpen(true)}
-                className={`flex items-center gap-2 px-3 py-2.5 rounded-xl transition border text-[13px] font-medium ${
+                className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl transition border text-[12px] font-medium shrink-0 ${
                   isScrolled 
                     ? 'bg-slate-800/80 text-slate-300 border-slate-700 hover:text-white hover:bg-slate-700' 
                     : 'bg-slate-100 text-slate-600 border-slate-200/80 hover:text-slate-900 hover:bg-slate-200/70'
                 }`}
                 title="Search services, acts, team (Ctrl + K)"
               >
-                <Search className="w-4 h-4 text-amber-400" />
-                <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-slate-200/60 text-slate-500 border border-slate-300/50">
+                <Search className="w-3.5 h-3.5 text-amber-400" />
+                <span className="font-mono text-[10.5px] px-1 py-0.5 rounded bg-slate-200/60 text-slate-500 border border-slate-300/50">
                   ⌘K
                 </span>
               </button>
@@ -469,23 +469,23 @@ export default function Navbar() {
                 href="https://wa.me/8801767690408?text=Hello%20Tax%20Assistance,%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 text-[13px] font-bold text-emerald-300 bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-500/40 rounded-xl transition"
+                className="whitespace-nowrap inline-flex items-center gap-1.5 px-3 py-2 text-[12px] 2xl:text-[13px] font-bold text-emerald-300 bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-500/40 rounded-xl transition shrink-0"
               >
-                <span className="relative flex h-2.5 w-2.5">
+                <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                 </span>
-                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
                 <span>WhatsApp</span>
               </a>
 
               {/* Consultation CTA */}
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white bg-gradient-to-r from-blue-700 to-[#0e2840] hover:from-blue-600 hover:to-blue-900 rounded-xl shadow-lg shadow-blue-900/30 transition-all transform hover:-translate-y-0.5 border border-blue-400/30"
+                className="whitespace-nowrap group inline-flex items-center gap-1.5 px-3.5 py-2 2xl:px-4 text-[12px] 2xl:text-[13px] font-bold text-white bg-gradient-to-r from-blue-700 to-[#0e2840] hover:from-blue-600 hover:to-blue-900 rounded-xl shadow-md shadow-blue-900/30 transition-all transform hover:-translate-y-0.5 border border-blue-400/30 shrink-0"
               >
                 <span>Consultation</span>
-                <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
 
@@ -517,7 +517,7 @@ export default function Navbar() {
 
           {/* Mobile Drawer */}
           {mobileMenuOpen && (
-            <div className="lg:hidden bg-[#071322] border-b border-slate-800 px-4 pt-4 pb-8 max-h-[85vh] overflow-y-auto text-white shadow-2xl">
+            <div className="xl:hidden bg-[#071322] border-b border-slate-800 px-4 pt-4 pb-8 max-h-[85vh] overflow-y-auto text-white shadow-2xl">
               
               {/* Mobile Quick Search Input */}
               <div 
